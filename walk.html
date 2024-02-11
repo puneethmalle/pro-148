@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:white">
+    <a-entity position = "20 30 50" rotation = "-22 0 0">
+    <a-camera  ></a-camera>
+    </a-entity>
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets timeout="10000">
+
+      <a-asset-item id="luffy" src="./monkey_d._luffy_scenario/scene.gltf"></a-asset-item>     
+      <a-asset-item id="meat" src="./meat/scene.gltf"></a-asset-item> 
+    <a-asset-item id = "ship" src = "./ship/scene.gltf"></a-asset-item>
+
+    </a-assets>
+
+
+    <!-------------------------------------Lights in the scene----------------------------------------------->
+
+    <!--Ambient-->
+    <a-entity light = "type:ambient;intensity:0.5">
+    </a-entity>
+    <!--Add Code here-->
+
+
+    <!--Directional-->
+    <a-entity >
+      <a-entity light = "type:directional; castShadow : true; intensity:1;distance:50;decay:2;color:yellow;" position = "20 30 50">
+      </a-entity>
+    </a-entity>
+    
+    <!--Add Code here-->
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+
+
+    <!--------------------------------------GLTF Models----------------------------------------------------------->
+
+    <!--luffy-->
+    <a-entity>
+      <a-entity position="20 15 15" rotation="0 90 0"  scale = "50 50 50" gltf-model="#luffy" shadow="cast: true;receive:true"></a-entity>
+    </a-entity>
+
+    <!--meat-->
+    <a-entity>
+    <a-entity position = "26 10 1" rotation = "0 0 0" scale = " 1 1 1 " gltf-model="#meat" shadow = "cast:true; receive:false"></a-entity>
+    </a-entity>
+
+    <!--ship-->
+    <a-entity>
+        <a-entity position = "20 0 0" rotation = "0 0 0" scale = "10 10 10" gltf-model = "#ship" shadow = "cast:true;receive:false"></a-entity>
+    </a-entity>
+
+    <!--trees-->
+    <!--Add Code here-->
+
+    <!--------------------------------------END----------------------------------------------------------->
+  </a-scene>
+</body>
+
+</html>
